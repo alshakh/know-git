@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-ws": "^4.0.0",
+    "reveal.js": "^3.7.0",
+    "webbyterm": "github:alshakh/webbyterm",
+    "webbyterm-client": "github:alshakh/webbyterm-client"
+  },
+  "name": "techiprez",
+  "description": "a setup to allow technical presentation easily",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alshakh/techiprez.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alshakh/techiprez/issues"
+  },
+  "homepage": "https://github.com/alshakh/techiprez#readme"
+}
