@@ -9,9 +9,43 @@ app.use(express.static(__dirname + "/public"));
 
 // ----------------------------------------------
 
-const Webbyterm = require("webbyterm")
+const WebbyTerm = require("webbyterm")
+
+let terminals = {}
+
+app.post('/terminal/:id/start', (req, res) => {
+    const id = req.params.id
+    console.log("start Connections", id, req.body )
+
+    if (terminals[id]) {
+        terminals[id].restart(req.body)
+    } else {
+        terminals[id] = new WebbyTerm(req.body)
+    }
+
+    res.end("OK")
+})
 
 
+app.post('/terminal/:id/resize', (req, res) => {
+    const id = req.params.id
+
+    if (terminals[id]) {
+        terminals[id].resize(req.body)
+    }
+    res.end("OK")
+})
+
+ews.app.ws('/terminal/:id', function(ws, req) {
+    let id = req.params.id
+
+    if (!terminals[id]) {
+        console.error(`Connection refused on id ${id}`)
+        ws.close()
+    }
+
+    terminals[id].connect(ws)
+});
 
 app.listen(3000, "localhost");
 console.log("listening to localhost:3000")

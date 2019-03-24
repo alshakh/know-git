@@ -8,4 +8,7 @@ Reveal.initialize({
     */
 });
 
+//
 hljs.initHighlightingOnLoad();
+//
+initializeTerminals()
