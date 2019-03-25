@@ -9,6 +9,21 @@ app.use(express.static(__dirname + "/public"));
 
 // ----------------------------------------------
 
+const Malafat = require("malafat")
+
+
+ews.app.ws('/malafat', function (ws, req) {
+    let cmd = new Malafat()
+    ws.on('message', (message) => {
+        cmd.write(message)
+    })
+
+    cmd.on("response", (response) => {
+        ws.send(response)
+    })
+});
+
+// ----------------------------------------------
 const WebbyTerm = require("webbyterm")
 
 let terminals = {}

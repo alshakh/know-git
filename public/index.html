@@ -2,15 +2,21 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="inconsolata-font/index.css">
     <link rel="stylesheet" href="revealjs/css/reveal.css">
     <link rel="stylesheet" href="revealjs/css/theme/white.css">
     <link rel="stylesheet" href="revealjs/lib/css/zenburn.css">
 
     <link rel="stylesheet" href="xterm/xterm.css">
+
+    <link rel="stylesheet" href="malafat-client/malafat.css">
+    <link rel="stylesheet" href="font-awesome/css/all.css">
+
 <style>
 
-div.terminal-aa {
+div.terminal-aa , div.malafat-aa {
     height:95vh;
+    font-size:34px;
 }
 
 </style>
@@ -20,6 +26,7 @@ div.terminal-aa {
     <div class="reveal">
         <div class="slides">
             <section>
+                <div class="malafat-aa" data-malafat data-dir="/home/shak/qq" data-watch dir-create></div>
             </section>
             <section>Slide 1</section>
             <section>
@@ -49,7 +56,11 @@ $(document).ready(function() {
     <script src="xterm/addons/fit/fit.js"></script>
     <script src="xterm/addons/attach/attach.js"></script>
     <script src="webbyterm-client/webbyterm-client.js"></script>
+
+    <script src="malafat-client/malafat.js"></script>
+
     <script src="./main.js"></script>
+
 </body>
 
 </html>
