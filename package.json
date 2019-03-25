@@ -5,6 +5,7 @@
     "express-ws": "^4.0.0",
     "malafat": "github:alshakh/malafat",
     "malafat-client": "github:alshakh/malafat-client",
+    "mathjax": "^2.7.5",
     "reveal.js": "^3.7.0",
     "typeface-inconsolata": "0.0.72",
     "webbyterm": "github:alshakh/webbyterm",

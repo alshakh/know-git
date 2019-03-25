@@ -12,14 +12,13 @@
     <link rel="stylesheet" href="malafat-client/malafat.css">
     <link rel="stylesheet" href="font-awesome/css/all.css">
 
-<style>
-
-div.terminal-aa , div.malafat-aa {
-    height:95vh;
-    font-size:34px;
-}
-
-</style>
+    <style>
+        div.terminal-aa,
+        div.malafat-aa {
+            height: 95vh;
+            font-size: 34px;
+        }
+    </style>
 </head>
 
 <body>
@@ -48,19 +47,45 @@ $(document).ready(function() {
             </section>
         </div>
     </div>
+
+    <script src="revealjs/lib/js/head.min.js"></script>
     <script src="revealjs/js/reveal.js"></script>
-    <script src="revealjs/plugin/math/math.js"></script>
-    <script src="revealjs/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            history: true,
+            width: '100%',
+            height: '100%',
+            math: {
+                mathjax: './mathjax/MathJax.js'
+            },
+            dependencies: [
+                // Syntax highlight for <code> elements
+                { src: 'revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+                // MathJax
+                { src: 'revealjs/plugin/math/math.js', async: true }
+            ]
+        });
+    </script>
+
+
 
     <script src="xterm/xterm.js"></script>
     <script src="xterm/addons/fit/fit.js"></script>
     <script src="xterm/addons/attach/attach.js"></script>
     <script src="webbyterm-client/webbyterm-client.js"></script>
+    <script>
+        initializeTerminals()
+    </script>
+
 
     <script src="malafat-client/malafat.js"></script>
-
-    <script src="./main.js"></script>
-
+    <script>
+        const socketUrl = `${(location.protocol === 'https:') ? 'wss://' : 'ws://'}${location.hostname}${location.port ? `:${location.port}` : ''}/malafat`;
+        document.querySelectorAll('[data-malafat]').forEach((el) => {
+            Malafat.fromElement(el, socketUrl)
+        })
+    </script>
 </body>
 
 </html>
