@@ -3,6 +3,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "express-ws": "^4.0.0",
+    "gitgraph.js": "^1.15.1",
     "malafat": "github:alshakh/malafat",
     "malafat-client": "github:alshakh/malafat-client",
     "mathjax": "^2.7.5",

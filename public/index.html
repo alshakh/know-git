@@ -12,11 +12,19 @@
     <link rel="stylesheet" href="malafat-client/malafat.css">
     <link rel="stylesheet" href="font-awesome/css/all.css">
 
+    <link rel="stylesheet" href="gitgraph/gitgraph.css">
+
     <style>
         div.terminal-aa,
         div.malafat-aa {
             height: 95vh;
             font-size: 34px;
+        }
+
+        #gitlogo, #stagingarea {
+            border:none;
+            box-shadow:none;
+
         }
     </style>
 </head>
@@ -24,6 +32,56 @@
 <body>
     <div class="reveal">
         <div class="slides">
+            <section>
+                <img id="gitlogo" src="assets/git-logo.png">
+            </section>
+            <section>
+                <img style="height:50vh" src="assets/final.png">
+            </section>
+            <section>
+                <h1>History</h1>
+                <div><canvas data-gitflow>
+                    master.commit().commit().commit()
+                    let develop = master.branch("develop")
+                    develop.commit().commit()
+                    master.commit().commit()
+                    let bugfix = master.branch("bugfix")
+                    bugfix.commit().commit()
+                    master.commit()
+                    develop.commit()
+                    develop.merge(master)
+                    bugfix.merge(master)
+                    </canvas></div>
+            </section>
+
+
+            <section>
+                <section>
+                Let's get into it
+                </section>
+                <section>
+                <div class="malafat-aa" data-malafat data-dir="demos/demo1" data-watch dir-create></div>
+                </section>
+                <section>
+                    <div class="terminal-aa" data-unrestricted-shell data-terminal data-name="demo1" data-id="demo1" data-cwd="demos/demo1"></div>
+                </section>
+                <section>
+                    <img id="stagingarea" style="height:80vh" src="assets/staging-area.png">
+                </section>
+            </section>
+
+
+
+
+
+            <section>
+                <canvas data-gitflow id="first-git-show">
+                    master.commit().commit().commit()
+                    let develop = master.branch("develop")
+                    develop.commit().commit()
+                    master.commit().commit()
+                </canvas>
+            </section>
             <section>
                 <div class="malafat-aa" data-malafat data-dir="/home/shak/qq" data-watch dir-create></div>
             </section>
@@ -44,6 +102,22 @@ $(document).ready(function() {
                 </section>
                 <section>Vertical Slide 2 \[\begin{aligned} \dot{x} &amp; = \sigma(y-x) \\ \dot{y} &amp; = \rho x - y - xz \\ \dot{z} &amp; = -\beta z + xy \end{aligned} \]
                 </section>
+                <section>
+                    <canvas data-gitflow >
+
+                        master.commit().commit()
+                        let dev1 = master.branch("dev1")
+                        dev1.commit({
+                            commitDotText : "asl;dfj asl;dfj asl;fjasldfj "
+                        
+                        })
+
+                        dev1.merge(master)
+                    
+                    
+                    </canvas>
+
+                </section>
             </section>
         </div>
     </div>
@@ -60,10 +134,19 @@ $(document).ready(function() {
             },
             dependencies: [
                 // Syntax highlight for <code> elements
-                { src: 'revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                {
+                    src: 'revealjs/plugin/highlight/highlight.js',
+                    async: true,
+                    callback: function() {
+                        hljs.initHighlightingOnLoad();
+                    }
+                },
 
                 // MathJax
-                { src: 'revealjs/plugin/math/math.js', async: true }
+                {
+                    src: 'revealjs/plugin/math/math.js',
+                    async: true
+                }
             ]
         });
     </script>
@@ -85,6 +168,22 @@ $(document).ready(function() {
         document.querySelectorAll('[data-malafat]').forEach((el) => {
             Malafat.fromElement(el, socketUrl)
         })
+    </script>
+
+    <script src="gitgraph/gitgraph.js"></script>
+    <script>
+        document.querySelectorAll('[data-gitflow]').forEach( (el) => {
+            let gitcode = el.innerHTML
+            el.innerHTML = ""
+            let gitgraph = new GitGraph({
+                canvas : el,
+                template : "metro",
+                orientation: "horizontal"
+            });
+            let master = gitgraph.branch("master")
+            eval(gitcode)
+        })
+        
     </script>
 </body>
 
