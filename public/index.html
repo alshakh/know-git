@@ -17,7 +17,7 @@
     <style>
         div.terminal-aa,
         div.malafat-aa {
-            height: 80vh;
+            height: 90vh;
             font-size: 34px;
         }
 
@@ -26,21 +26,57 @@
             border: none;
             box-shadow: none;
         }
+
+        i.green {
+            color: #51cf66;
+        }
+
+        i.blue {
+            color: #339af0;
+        }
+
+        i.red {
+            color: #ff6b6b;
+        }
+
+        i.orange {
+            color: #ff922b;
+        }
+
+        i.darkgreen {
+            color: #20c997;
+        }
+
+        i.purple {
+            color: #845ef7;
+        }
+
+        i.pink {
+            color: #f06595;
+        }
     </style>
 </head>
 
 <body>
     <div class="reveal">
         <div class="slides">
-            <section id="home-slide">
+            <section data-menu-title="Start">
                 <img id="gitlogo" src="assets/git-logo.png">
             </section>
-            <section>
+            <section data-menu-title="My Final Document">
                 <img style="height:50vh" src="assets/final.png">
             </section>
+            <section data-menu-title="Git ?">
+                <h2>Git ?</h2>
+                <h3 class="fragment"><i class="fas fa-book green"></i> Keeping History</h3>
+                <h3 class="fragment"><i class="fas fa-user-friends blue"></i> Collaboration</h3>
+            </section>
+
+
             <section>
-                <h1>History</h1>
-                <div><canvas data-gitflow>
+                <section data-menu-title="History Chapter">
+                    <h1><i class="fas fa-book green"></i> History</h1>
+                    <div><canvas data-gitflow>
                     master.commit().commit().commit()
                     let develop = master.branch("develop")
                     develop.commit().commit()
@@ -52,20 +88,14 @@
                     develop.merge(master)
                     bugfix.merge(master)
                     </canvas></div>
-            </section>
-
-
-            <section>
-                <section>
-                    Let's get into it
-                    <div class="float-button1">
-                        <a href="#demo1">demo 1</a>
-                    </div>
                 </section>
-                <section>
+                <section data-menu-title="First Contact!">
+                    <h2>Let's get into it</h2>
+                </section>
+                <section data-menu-title="Staging Area">
                     <img id="stagingarea" style="height:80vh" src="assets/staging-area.png">
                 </section>
-                <section>
+                <section data-menu-title="Demo 1 : 1">
                     <canvas data-gitflow>
                     master.commit().commit()
                     let dynamic = master.branch("dynamicgreeting")
@@ -73,7 +103,7 @@
                     master.commit()
                     </canvas>
                 </section>
-                <section>
+                <section data-menu-title="Demo 1 : 2">
                     <canvas data-gitflow>
                     master.commit().commit()
                     let dynamic = master.branch("dynamicgreeting")
@@ -82,22 +112,70 @@
                     dynamic.merge(master)
                     </canvas>
                 </section>
-            </section>
 
-            <section>
-                <h2>Repository</h2>
-                <ul>
-                    <li>Self contained</li>
-                    <li>Contents are related </li>
-                </ul>
-            </section>
-            <section>
-                <section>
-                    <h2>Commits</h2>
+                <section data-menu-title="Repository">
+                    <h2><i class="fas fa-project-diagram red"></i> Repository</h2>
+                    <ul>
+                        <li class="fragment">Self contained</li>
+                        <li class="fragment">Contents are related </li>
+                        <li class="fragment">Shared History </li>
+                    </ul>
                 </section>
+                <section data-menu-title="Commits (1)">
+                    <h2><i class="fas fa-stamp purple"></i> Commits <small><small>First point of view</small></small></h2>
+                    <ul>
+                        <li class="fragment">Locked State of the Repository</li>
+                        <li class="fragment">Referenced by Unique SHA1 Hash</li>
+                        <li class="fragment">Parent Commit Reference (hashes)</li>
+                    </ul>
+                </section>
+
+                <section data-menu-title="Tags">
+                    <h2><i class="fas fa-tags pink"></i> Tags</h2>
+                    <ul>
+                        <li class="fragment">Named refence to a specific commit</li>
+                        <li class="fragment">Can be used instead of commit hash as a reference</li>
+                    </ul>
+                </section>
+
+                <section data-menu-title="Commits (2)">
+                    <h2><i class="fas fa-file-alt purple"></i> <i class="fas fa-file-alt red"></i></span> Commits <small><small>Second point of view</small></small></h2>
+                    <ul>
+                        <li class="fragment">Just a set of defined changes to repository</li>
+                        <li class="fragment">Almost like an operation</li>
+                        <li class="fragment">Can be applied at any order</li>
+                    </ul>
+                </section>
+
+                <section data-menu-title="Branches (1)">
+                    <h2><i class="fas fa-code-branch blue"></i> Branches <small><small>First point of view</small></small></h2>
+                    <ul>
+                        <li class="fragment">Timeline for the repository</li>
+                        <li class="fragment">Can be forked at any commit</li>
+                        <li class="fragment">You checkout branches to develop</li>
+                    </ul>
+                </section>
+
+                <section data-menu-title="Branches (2)">
+                    <h2><i class="fas fa-link blue"></i> <i class="fas fa-file-alt red"></i></span> Branches <small><small>Second point of view</small></small></h2>
+                    <ul>
+                        <li class="fragment">Just a reference to a commit (like a tag)</li>
+                        <li class="fragment">It advances everytime a new commit is made</li>
+                    </ul>
+                </section>
+
+                <section data-menu-title="Merge">
+                    <h2><i class="fas fa-compress-arrows-alt orange"></i> <i class="fas fa-file-alt red"></i></span> Merging</h2>
+                    <ul>
+                        <li class="fragment">Add commits (changes) from a branch to other branch</li>
+                    </ul>
+                </section>
+                <!-- TODO : Fast forward & merge commit -->
+
+
             </section>
 
-            <section>
+            <!--<section>
                 <canvas data-gitflow id="first-git-show">
                     master.commit().commit().commit()
                     let develop = master.branch("develop")
@@ -141,7 +219,7 @@ $(document).ready(function() {
                     </canvas>
 
                 </section>
-            </section>
+            </section>-->
             <section>
                 <section id="demo1">
                     <h2> Demo 1 </h2>
