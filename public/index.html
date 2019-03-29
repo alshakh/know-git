@@ -21,10 +21,10 @@
             font-size: 34px;
         }
 
-        #gitlogo, #stagingarea {
-            border:none;
-            box-shadow:none;
-
+        #gitlogo,
+        #stagingarea {
+            border: none;
+            box-shadow: none;
         }
     </style>
 </head>
@@ -57,10 +57,10 @@
 
             <section>
                 <section>
-                Let's get into it
+                    Let's get into it
                 </section>
                 <section>
-                <div class="malafat-aa" data-malafat data-dir="demos/demo1" data-watch dir-create></div>
+                    <div class="malafat-aa" data-malafat data-dir="demos/demo1" data-watch dir-create></div>
                 </section>
                 <section>
                     <div class="terminal-aa" data-unrestricted-shell data-terminal data-name="demo1" data-id="demo1" data-cwd="demos/demo1"></div>
@@ -68,8 +68,24 @@
                 <section>
                     <img id="stagingarea" style="height:80vh" src="assets/staging-area.png">
                 </section>
+                <section>
+                    <canvas data-gitflow>
+                    master.commit().commit()
+                    let dynamic = master.branch("dynamicgreeting")
+                    dynamic.commit().commit()
+                    master.commit()
+                    </canvas>
+                </section>
+                <section>
+                    <canvas data-gitflow>
+                    master.commit().commit()
+                    let dynamic = master.branch("dynamicgreeting")
+                    dynamic.commit().commit()
+                    master.commit()
+                    dynamic.merge(master)
+                    </canvas>
+                </section>
             </section>
-
 
 
 
@@ -103,7 +119,7 @@ $(document).ready(function() {
                 <section>Vertical Slide 2 \[\begin{aligned} \dot{x} &amp; = \sigma(y-x) \\ \dot{y} &amp; = \rho x - y - xz \\ \dot{z} &amp; = -\beta z + xy \end{aligned} \]
                 </section>
                 <section>
-                    <canvas data-gitflow >
+                    <canvas data-gitflow>
 
                         master.commit().commit()
                         let dev1 = master.branch("dev1")
@@ -159,9 +175,9 @@ $(document).ready(function() {
     <script src="webbyterm-client/webbyterm-client.js"></script>
     <script>
         initializeTerminals({
-            fontSize : 30,
-            fontFamily : "Inconsolata",
-            home : "/home/shak/presentation-demos/shell-home"
+            fontSize: 30,
+            fontFamily: "Inconsolata",
+            home: "/home/shak/presentation-demos/shell-home"
         })
     </script>
 
@@ -176,18 +192,17 @@ $(document).ready(function() {
 
     <script src="gitgraph/gitgraph.js"></script>
     <script>
-        document.querySelectorAll('[data-gitflow]').forEach( (el) => {
+        document.querySelectorAll('[data-gitflow]').forEach((el) => {
             let gitcode = el.innerHTML
             el.innerHTML = ""
             let gitgraph = new GitGraph({
-                canvas : el,
-                template : "metro",
+                canvas: el,
+                template: "metro",
                 orientation: "horizontal"
             });
             let master = gitgraph.branch("master")
             eval(gitcode)
         })
-        
     </script>
 </body>
 

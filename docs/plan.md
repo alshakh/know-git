@@ -43,10 +43,15 @@
 ## Staging area
 ## Commit
 ## Revert
+## Branch
+## .gitignore
+
+
 
 # Collaboration
 ## Concepts
 ## RULES!
+## Problems
 
 # Fixing Problems
 	- reflog

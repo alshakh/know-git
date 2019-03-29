@@ -29,10 +29,45 @@
     git diff
     
     git add
+    git commit
+
+    ---------------
+
+    vim greet.sh
+    <add decorations>
+    git diff
+    git add & commit
+
+    <REGRET>
+
+    git revert
+    git log
+
+    --------------
+
+    git branch dynamicname
+    git checkout dynamicname
+
+    vim dynamicgreeting
+    
+    git add
+    git commit
+
+    git log
+
+    -------------
+    checkout master
+    <show>
+    commit
+
+    merge
+    --------------
+
 
 
 
     
+
 
 
 
