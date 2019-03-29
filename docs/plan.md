@@ -1,5 +1,6 @@
 # Intro
 ## --
+
     git is a tool that added a lot of value to my life
         - less worry
         - clean history
@@ -8,6 +9,8 @@
         - neccessary basic concepts
         - simple things to start working a
         - principles of sharing code.
+        I AM GOING TO TALK ABOUT BEST PRACTICES FOR DEVELOPEMENT PROJECTS
+        YOU CAN USE GIT ANY WAY YOU SEE FIT, EVERYONES REQUIREMENTS IS DIFFERENT
     ! JOKE AT THE END
 ## What git is
     git is the gate keeper for your files
@@ -40,8 +43,17 @@
 
 # Fundementals
 ## Repository
-## Staging area
+
+    Repository is
+        - self contained and focused
 ## Commit
+        A commit is a locked state of the 
+
+## Staging area
+    You saw the staging area :
+    
+    you can choose which changes to add to the commit
+
 ## Revert
 ## Branch
 ## .gitignore
