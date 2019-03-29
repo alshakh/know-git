@@ -158,7 +158,11 @@ $(document).ready(function() {
     <script src="xterm/addons/attach/attach.js"></script>
     <script src="webbyterm-client/webbyterm-client.js"></script>
     <script>
-        initializeTerminals()
+        initializeTerminals({
+            fontSize : 30,
+            fontFamily : "Inconsolata",
+            home : "/home/shak/presentation-demos/shell-home"
+        })
     </script>
 
 
