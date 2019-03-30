@@ -126,9 +126,6 @@
                     </code></pre>
 
                 </section>
-                <section data-menu-title="Staging Area">
-                    <img id="stagingarea" style="height:80vh" src="assets/staging-area.png">
-                </section>
                 <section data-menu-title="Commits (1)">
                     <h2><i class="fas fa-stamp purple"></i> Commits <small><small>1st view</small></small>
                     </h2>
@@ -141,6 +138,7 @@
                         $ git add &lt;files/directories&gt;
                         $ git commit
                     </code></pre>
+                    <img class="fragment" id="stagingarea" src="assets/staging-area.png">
                 </section>
                 <section data-menu-title="Log">
                     <h2><i class="fas fa-pencil-alt orange"></i> Log</h2>
@@ -543,8 +541,8 @@
 
 
             <section>
-                <section id="demo1">
-                    <h2> Demo 1 </h2>
+                <section id="simple-history-demo" data-menu-title="Simple Demo">
+                    <h2>Demo 1 </h2>
                 </section>
                 <section>
                     <div class="malafat-aa" data-malafat data-dir="demos/simple-history" data-watch dir-create></div>
@@ -586,9 +584,8 @@
                     icon: '<i class="fas fa-desktop">',
                     content: `
                         <ul class="slide-menu-items">
-	                        <li class="slide-menu-item"><i class="fas fa-code-branch demo-icon"></i><a href="#/demo1">Demo1</a></li>
+	                        <li class="slide-menu-item"><i class="fas fa-angle-right demo-icon"></i><a href="#/simple-history-demo">Simple Demo</a></li>
 	                        <li class="slide-menu-item"><i class="fas fa-angle-right demo-icon"></i><a href="#/demo1">Demo1</a></li>
-                    <!--<li class="slide-menu-item"><a href="#demo2">Demo2</a><li>-->
                         </ul>
                     `
                 }],
