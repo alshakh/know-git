@@ -106,6 +106,7 @@
                 <section data-menu-title="Repository">
                     <h2><i class="fas fa-project-diagram red"></i> Repository</h2>
                     <ul>
+                        <li class="fragment">A Project</li>
                         <li class="fragment">Self contained</li>
                         <li class="fragment">Contents are related </li>
                         <li class="fragment">Shared History </li>
@@ -113,6 +114,17 @@
                     <pre class="fragment"><code class="shell" data-trim data-noescape>
                         $ git init
                     </code></pre>
+                </section>
+                <section data-menu-title="Status">
+
+                    <h2><i class="fas fa-stethoscope purple"></i> <code>Status</code></h2>
+                    <ul>
+                        <li class="fragment">Get status of repository at current time </li>
+                    </ul>
+                    <pre class="fragment"><code class="shell" data-trim data-noescape>
+                        $ git status
+                    </code></pre>
+
                 </section>
                 <section data-menu-title="Staging Area">
                     <img id="stagingarea" style="height:80vh" src="assets/staging-area.png">
@@ -141,6 +153,21 @@
                         $ git log --graph
                     </code></pre>
                 </section>
+                <section data-menu-title="Diff">
+
+                    <h2><i class="fas fa-copy blue"></i> <code>Diff</code></h2>
+                    <ul>
+                        <li class="fragment">Compare two states of repository </li>
+                    </ul>
+                    <pre class="fragment"><code class="shell" data-trim data-noescape>
+                        $ git diff
+                        $ git diff --staged
+                        $ git diff &lt;commit 1&gt; &lt;commit 1&gt;
+                        $ git diff --stat
+                        $ ...
+                    </code></pre>
+
+                </section>
                 <section data-menu-title="Tags">
                     <h2><i class="fas fa-tags pink"></i> Tags</h2>
                     <ul>
@@ -153,7 +180,7 @@
                     </code></pre>
                 </section>
                 <section data-menu-title="Revert">
-                    <h2><i class="fas fa-history darkgreen"></i> Revert</h2>
+                    <h2><i class="fas fa-history darkgreen"></i> <code>Revert</code></h2>
                     <ul>
                         <li class="fragment">Reverse a certain commit</li>
                         <li class="fragment">Without deleting the old commit</li>
@@ -165,7 +192,7 @@
                     </code></pre>
                 </section>
                 <section data-menu-title="Checkout (1)">
-                    <h2><i class="fas fa-random blue"></i> Checkout (1)</h2>
+                    <h2><i class="fas fa-random blue"></i> <code>Checkout</code> (1)</h2>
                     <ul>
                         <li class="fragment">Turn the working are to a specific commit</li>
                     </ul>
@@ -178,6 +205,7 @@
                     <ul>
                         <li class="fragment">Ignore files from repository repository</li>
                         <li class="fragment">Any changes to these files are not noticed</li>
+                        <li class="fragment">Filename is <code>.gitignore</code></li>
                     </ul>
                 </section>
             </section>
@@ -209,7 +237,7 @@
                         <li class="fragment">Every contributer has their own local repository</li>
                         <li class="fragment">Every one Pushes & Pulls to/from a centra repository</li>
                     </ul>
-                    <p class="fragment"><i class="fas fa-exclamation-triangle orange"></i> Contributer can share ONLY IF all previous history MATCH</p>
+                    <p class="fragment"><i class="fas fa-exclamation-triangle orange"></i> Contributers can share ONLY IF all previous histories MATCH</p>
                 </section>
 
                 <section data-menu-title="Remotes">
@@ -250,8 +278,8 @@
                     </code></pre>
                 </section>
 
-                <section data-menu-title="Push!">
-                    <h2><i class="fas fa-arrow-up purple"></i> Push!</h2>
+                <section data-menu-title="Push">
+                    <h2><i class="fas fa-arrow-up purple"></i> Push</h2>
                     <p class="fragment">Sharing your commits to the outside</p>
                     <p class="fragment"><i class="fas fa-exclamation-triangle orange"></i> Local previous hsitory and remote history MUST match</p>
                     <pre class="fragment"><code class="shell" data-trim data-noescape>
@@ -262,8 +290,8 @@
                     $ git push
                     </code></pre>
                 </section>
-                <section data-menu-title="Pull!">
-                    <h2><i class="fas fa-arrow-down purple"></i> Pull!</h2>
+                <section data-menu-title="Pull">
+                    <h2><i class="fas fa-arrow-down purple"></i> Pull</h2>
 
                     <p class="fragment">Getting & Applying shared commits to your local repository</p>
                     <p class="fragment"><i class="fas fa-exclamation-triangle orange"></i> Local previous hsitory and remote history MUST match</p>
@@ -323,7 +351,7 @@
 
                 <section data-menu-title="Reset">
                     <h2><i class="fas fa-exclamation red"></i> Reset</h2>
-                    <p>Set branch reference to commit</p>
+                    <p class="fragment">Set branch reference to commit</p>
                     <pre class="fragment"><code class="shell" data-trim data-noescape>
                     $ git reset &lt;reference&gt;
                     $ git reset &lt;reference&gt; --hard
@@ -334,7 +362,7 @@
                     <h2><i class="fas fa-compress-arrows-alt orange"></i> Merging</h2>
                     <ul>
                         <li class="fragment">Add commits (changes) from a branch to another branch</li>
-                        <li> Two types :
+                        <li class="fragment"> Two types :
                             <ul>
                                 <li class="fragment">Fast forward</li>
                                 <li class="fragment">Merge commit </li>
@@ -425,8 +453,8 @@
                 </section>
                 <section data-menu-title="Secret Information">
                     <h2><i class="fas fa-key red"></i> Secret Information</h2>
-                    <p> Keep Secret Information outside the repository</p>
-                    <p> Use <code>.gitignore</code> to ignore credential files</p>
+                    <p class="fragment"> Keep Secret Information outside the repository</p>
+                    <p class="fragment"> Use <code>.gitignore</code> to ignore credential files</p>
                 </section>
                 <section data-menu-title="Effective Use of branches">
                     <h2><i class="fas fa-check-square green"></i> Effictive Use of branches</h2>
@@ -446,6 +474,8 @@
                     <h1><i class="fas fa-star darkgreen"></i> Other Topics!</h1>
                 </section>
                 <section data-menu-title="Getting Help">
+
+                    <h2><i class="fas fa-question orange"></i> Getting Help</h2>
                     <pre class="fragment"><code class="shell" data-trim data-noescape>
                         $ git &lt;command&gt; --help
                         $ git remote --hlep
@@ -454,8 +484,8 @@
                 </section>
                 <section data-menu-title="HEAD">
                     <h2><i class="fas fa-undo-alt green"></i> HEAD </h2>
-                    <p><code>HEAD</code> always exists and refers to the current commit</p>
-                    <p><code>HEAD</code> is usually used with relative references</p>
+                    <p class="fragment"><code>HEAD</code> always exists and refers to the current commit</p>
+                    <p class="fragment"><code>HEAD</code> is usually used with relative references</p>
                 </section>
                 <section data-menu-title="Fetch">
                     <h2><i class="fas fa-long-arrow-alt-down purple"></i> Fetch</h2>
@@ -464,7 +494,7 @@
                 <section data-menu-title="Blamestorming">
                     <h2><i class="fas fa-hand-point-right orange"></i> Blame</h2>
 
-                    <p>Get all changes on a particuler file/line</p>
+                    <p class="fragment">Get all changes on a particuler file/line</p>
                     <pre class="fragment"><code class="shell" data-trim data-noescape>
                     $ git blame &lt;filename&gt;
                     </code></pre>
@@ -473,10 +503,10 @@
                 <section data-menu-title="Rebase">
                     <h2><i class="fas fa-location-arrow darkgreen"></i> Rebase</h2>
 
-                    <p>Reapply commits from a different fork</p>
-                    <p>Edit, merge, remove old commits</p>
-                    <p>Edit, merge, remove old commits</p>
+                    <p class="fragment">Reapply commits from a different fork</p>
+                    <p class="fragment">Edit, merge, remove old commits</p>
                     <p class="fragment"><i class="fas fa-exclamation-triangle orange"></i> NEVER rebase pushed commits, NEVER!</p>
+                    <p class="fragment"><i class="fas fa-exclamation-triangle orange"></i> Some commits will disappear (use <code>reflog</code> to recover)</p>
                     <pre class="fragment"><code class="shell" data-trim data-noescape>
                     $ git rebase &lt;new base&gt;
                     $ git rebase --interactive &lt;new base&gt;
@@ -484,17 +514,18 @@
 
                 </section>
                 <section data-menu-title="Signed Tags">
-                    <h2><i class="fas fa-signature"></i> Sign Tags</h2>
-                    <p>It's possible to sign tags for versions</p>
-                    <p>Prevents manipulating history for critical code</p>
+                    <h2><i class="fas fa-signature blue"></i> Sign Tags</h2>
+                    <p class="fragment">It's possible to sign tags for versions</p>
+                    <p class="fragment">Prevents manipulating history for critical code</p>
                 </section>
                 <section data-menu-title="Hooks">
                     <h2><i class="fas fa-fire red"></i> Hooks</h2>
-                    <p>Automatic scripts to run with a git event</p>
-                    <p>Can fail or prevent git events</p>
-                    <p>Usually it's used to verify before pushing or run tests before commiting</p>
+                    <p class="fragment">Automatic scripts to run with a git event</p>
+                    <p class="fragment">Can fail or prevent git events</p>
+                    <p class="fragment">Usually it's used to verify before pushing or run tests before commiting</p>
                 </section>
-                <section data-menu-title="Getting Help">
+                <section data-menu-title="Resources">
+                    <h2><i class="fab fa-sourcetree"></i> Git Resources</h2>
                     <ul>
                         <li><a href="https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud">Atlassian Git Tutorials</a></li>
                         <li><a href="https://git-scm.com/book/en/v2">GIT Official Website's book</a></li>
