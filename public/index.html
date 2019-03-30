@@ -130,6 +130,17 @@
                         $ git commit
                     </code></pre>
                 </section>
+                <section data-menu-title="Log">
+                    <h2><i class="fas fa-pencil-alt orange"></i> Log</h2>
+                        <p class="fragment">View Commit History</p>
+                    <pre class="fragment"><code class="shell" data-trim data-noescape>
+                        $ git log
+                        $ git log --patch
+                        $ git log --stat
+                        $ git log --pretty=oneline
+                        $ git log --graph
+                    </code></pre>
+                </section>
                 <section data-menu-title="Tags">
                     <h2><i class="fas fa-tags pink"></i> Tags</h2>
                     <ul>
@@ -151,17 +162,6 @@
                     </ul>
                     <pre class="fragment"><code class="shell" data-trim data-noescape>
                         $ git revert
-                    </code></pre>
-                </section>
-                <section data-menu-title="Log">
-                    <h2><i class="fas fa-pencil-alt orange"></i> Log</h2>
-                        <p class="fragment">View Commit History</p>
-                    <pre class="fragment"><code class="shell" data-trim data-noescape>
-                        $ git log
-                        $ git log --patch
-                        $ git log --stat
-                        $ git log --pretty=oneline
-                        $ git log --graph
                     </code></pre>
                 </section>
                 <section data-menu-title="Checkout (1)">
@@ -186,13 +186,28 @@
             <section>
                 <section data-menu-title="Collaboration (1) Chapter">
                     <h1><i class="fas fa-user-friends blue"></i> Collaboration (1)</h1>
+
+                    <div style="margin-left:70px">
+                        <canvas data-gitflow>
+                            master.commit().commit().commit()
+                        </canvas>
+                    </div>
+                    <div style="margin-top:-70px;">
+                        <i class="fas fa-long-arrow-alt-up green fa-lg"></i>
+                        <i class="fas fa-long-arrow-alt-down red fa-lg"></i>
+                    </div>
+                    <div style="margin-left:70px">
+                        <canvas data-gitflow>
+                            master.commit().commit().commit().commit()
+                        </canvas>
+                    </div>
+
                 </section>
                 <section data-menu-title="Model">
                     <h2><i class="fas fa-expand-arrows-alt orange"></i> Collaboration Model</h2>
                     <ul>
-                        <li class="fragment">Every contributer has teir own local repository</li>
+                        <li class="fragment">Every contributer has their own local repository</li>
                         <li class="fragment">Every one Pushes & Pulls to/from a centra repository</li>
-                        <li class="fragment">Not everything is necessarly shared</li>
                     </ul>
                     <p class="fragment"><i class="fas fa-exclamation-triangle orange"></i> Contributer can share ONLY IF all previous history MATCH</p>
                 </section>
@@ -261,6 +276,7 @@
             <section>
                 <section data-menu-title="History (2)">
                     <h1><i class="fas fa-book green"></i> History (2)</h1>
+                    <p>Multiple timelines</p>
                     <div><canvas data-gitflow>
                     master.commit().commit().commit()
                     let develop = master.branch("develop")
@@ -301,71 +317,133 @@
                     <ul>
                         <li class="fragment">Just a reference to a commit (like a tag)</li>
                         <li class="fragment">It advances everytime a new commit is made</li>
+                        <li class="fragment">A branch is really cheap!</li>
                     </ul>
                 </section>
 
                 <section data-menu-title="Reset">
-
-                    RESET !!
-
+                    <h2><i class="fas fa-exclamation red"></i> Reset</h2>
+                    <p>Set branch reference to commit</p>
+                    <pre class="fragment"><code class="shell" data-trim data-noescape>
+                    $ git reset &lt;reference&gt;
+                    $ git reset &lt;reference&gt; --hard
+                    </code></pre>
                 </section>
 
                 <section data-menu-title="Merge">
-                    <h2><i class="fas fa-compress-arrows-alt orange"></i></span> Merging</h2>
+                    <h2><i class="fas fa-compress-arrows-alt orange"></i> Merging</h2>
                     <ul>
-                        <li class="fragment">Add commits (changes) from a branch to other branch</li>
+                        <li class="fragment">Add commits (changes) from a branch to another branch</li>
+                        <li> Two types :
+                            <ul>
+                                <li class="fragment">Fast forward</li>
+                                <li class="fragment">Merge commit </li>
+                            </ul>
+                        </li>
                     </ul>
                 </section>
-                <!-- TODO : Fast forward & merge commit -->
+
+                <section data-menu-title="Merge Conflicts">
+                    <h2><i class="fas fa-arrow-right green"></i><i class="fas fa-arrow-left red"></i> Merge Conflicts</h2>
+                </section>
+
+                <section data-menu-title="Recoving">
+                    <h2><i class="fas fa-life-ring red"></i> Recoving lost commits</h2>
+                    <pre class="fragment"><code class="shell" data-trim data-noescape>
+                    $ git reflog
+                    c5b15da (HEAD -> gitsession, origin/gitsession) HEAD@{0}: commit: Improve look of explainGit & add reset button
+                    8fb585a HEAD@{1}: commit: start collaboration
+                    2abb0d9 (tag: show) HEAD@{2}: commit: Fix references
+                    dfce29b HEAD@{3}: commit: add explainGit
+                    1b0da86 HEAD@{4}: commit: improvements
+                    a48bc06 HEAD@{5}: commit: add more sections
+                    </code></pre>
+                    <pre class="fragment"><code class="shell" data-trim data-noescape>
+                    $ git reset &lt;desired commit&gt;
+                    </code></pre>
+                </section>
             </section>
 
             <section>
-                <section data-menu-title="Collaboration Chapter">
-                    <h1><i class="fas fa-user-friends blue"></i> Collaboration</h1>
-                    <div><canvas data-gitflow>
-                    master.commit().commit().commit()
-                    let develop = master.branch("develop")
-                    develop.commit().commit()
-                    master.commit().commit()
-                    develop.merge(master)
-                    master.commit().commit().commit()
-                    </canvas>
+                <section data-menu-title="Collaboration (2)">
+                    <h1><i class="fas fa-user-friends blue"></i> Collaboration (2)</h1>
+                    <p>Effective Collaboration</p>
+
+                    <div style="margin-left:70px">
                         <canvas data-gitflow>
-                    master.commit().commit().commit()
-                    let develop = master.branch("develop")
-                    develop.commit().commit()
-                    master.commit().commit()
-                    develop.merge(master)
-                    develop.commit().commit()
-                    </canvas></div>
+                            master.commit().commit().commit()
+                            let develop = master.branch("develop")
+                            develop.commit().commit()
+                            master.commit().commit()
+                            develop.merge(master)
+                            master.commit().commit().commit()
+                        </canvas>
+                    </div>
+                    <div style="margin-top:-70px">
+                        <i class="fas fa-long-arrow-alt-up green fa-lg"></i>
+                        <i class="fas fa-long-arrow-alt-down red fa-lg"></i>
+                    </div>
+                    <div style="margin-left:70px">
+                        <canvas data-gitflow>
+                            master.commit().commit().commit()
+                            let develop = master.branch("develop")
+                            develop.commit()
+                            let bugfix = develop.branch("bugfix")
+                            develop.commit()
+                            bugfix.commit().commit()
+                            master.commit()
+                            let b2 = master.branch("DF")
+                            master.commit()
+                            b2.commit()
+                            develop.merge(master)
+                            develop.commit().commit()
+                        </canvas>
+                    </div>
+                </section>
+                <section data-menu-title="Keep Conventions">
+                    <h2><i class="fas fa-handshake blue"></i> Keep convensions</h2>
+
+                    <ul>
+                        <li class="fragment"><i class="far fa-check-circle green"></i> Agree on a main branch, i.e the clean stable branch</li>
+                        <li class="fragment"><i class="fas fa-envelope orange"></i> Agree on commit messages format and content</li>
+                        <li class="fragment"><i class="fas fa-hashtag red"></i> Agree on a versioning scheme</li>
+                        <li class="fragment"><i class="fas fa-file-contract purple"></i> Agree on a workflow
+                            <ul>
+                                <li><a>https://www.atlassian.com/git/tutorials/comparing-workflows</a>
+                                    <ul>
+                                        <li>Centralized Workflow</li>
+                                        <li>Feature Branch Workflow</li>
+                                        <li>Gitflow Workflow</li>
+                                        <li>Forking Workflow</li>
+                                    </ul>
+                                </li>
+                                <li>Make your own</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </section>
+                <section data-menu-title="Secret Information">
+                    <h2><i class="fas fa-key red"></i> Secret Information</h2>
+                    <p> Keep Secret Information outside the repository</p>
+                    <p> Use <code>.gitignore</code> to ignore credential files</p>
+                </section>
+                <section data-menu-title="Effective Use of branches">
+                    <h2><i class="fas fa-check-square green"></i> Effictive Use of branches</h2>
+                    <ul>
+                        <li class="fragment">Not every branch should be shared</li>
+                        <li class="fragment">NEVER commit directly to the main branch</li>
+                        <li class="fragment">Always tryout it things in a new branch</li>
+                        <li class="fragment">Keep a main branch with only clean commits</li>
+                        <li class="fragment">Do NOT work on the stable branch, when it's ready merge and push</li>
+                        <li class="fragment">Delete old branches</li>
+                    </ul>
                 </section>
             </section>
 
             <section>
                 <section data-menu-title="Other Topics">
-
-                </section>
-                <section data-menu-title="Fetch">
-                    <h2><i class="fas long-arrow-alt-down purple"></i> Fetch</h2>
-                    <p class="fragment">Only downloading changes from remote without applying</p>
-                </section>
-                <section data-menu-title="Blamestorming">
-
-                </section>
-                <section data-menu-title="Rebase">
-
-                </section>
-                <section data-menu-title="Signed Tags">
-
-                </section>
-
-            </section>
-            <section>
-                <section data-menu-title="Generatl Advice">
-                    <ul>
-                        <li>Create a git repo for every project</li>
-                        <li>Always create a branch for new features</li>
-                    </ul>
+                    <h1><i class="fas fa-star darkgreen"></i> Other Topics!</h1>
                 </section>
                 <section data-menu-title="Getting Help">
                     <pre class="fragment"><code class="shell" data-trim data-noescape>
@@ -373,12 +451,54 @@
                         $ git remote --hlep
                         $ git remote add --hlep
                     </code></pre>
+                </section>
+                <section data-menu-title="HEAD">
+                    <h2><i class="fas fa-undo-alt green"></i> HEAD </h2>
+                    <p><code>HEAD</code> always exists and refers to the current commit</p>
+                    <p><code>HEAD</code> is usually used with relative references</p>
+                </section>
+                <section data-menu-title="Fetch">
+                    <h2><i class="fas fa-long-arrow-alt-down purple"></i> Fetch</h2>
+                    <p class="fragment">Only downloading changes from remote without applying</p>
+                </section>
+                <section data-menu-title="Blamestorming">
+                    <h2><i class="fas fa-hand-point-right orange"></i> Blame</h2>
+
+                    <p>Get all changes on a particuler file/line</p>
+                    <pre class="fragment"><code class="shell" data-trim data-noescape>
+                    $ git blame &lt;filename&gt;
+                    </code></pre>
 
                 </section>
-                <section>
-                    <a href="https://git-scm.com/book/en/v2">GIT Official Website's book</a>
-                    <a href="https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud">Atlassian Git Tutorials</a>
-                    
+                <section data-menu-title="Rebase">
+                    <h2><i class="fas fa-location-arrow darkgreen"></i> Rebase</h2>
+
+                    <p>Reapply commits from a different fork</p>
+                    <p>Edit, merge, remove old commits</p>
+                    <p>Edit, merge, remove old commits</p>
+                    <p class="fragment"><i class="fas fa-exclamation-triangle orange"></i> NEVER rebase pushed commits, NEVER!</p>
+                    <pre class="fragment"><code class="shell" data-trim data-noescape>
+                    $ git rebase &lt;new base&gt;
+                    $ git rebase --interactive &lt;new base&gt;
+                    </code></pre>
+
+                </section>
+                <section data-menu-title="Signed Tags">
+                    <h2><i class="fas fa-signature"></i> Sign Tags</h2>
+                    <p>It's possible to sign tags for versions</p>
+                    <p>Prevents manipulating history for critical code</p>
+                </section>
+                <section data-menu-title="Hooks">
+                    <h2><i class="fas fa-fire red"></i> Hooks</h2>
+                    <p>Automatic scripts to run with a git event</p>
+                    <p>Can fail or prevent git events</p>
+                    <p>Usually it's used to verify before pushing or run tests before commiting</p>
+                </section>
+                <section data-menu-title="Getting Help">
+                    <ul>
+                        <li><a href="https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud">Atlassian Git Tutorials</a></li>
+                        <li><a href="https://git-scm.com/book/en/v2">GIT Official Website's book</a></li>
+                    </ul>
                 </section>
             </section>
 
@@ -397,60 +517,6 @@
                     <iframe class="iframe-element" src="explaingit/explain.html?case=commit" width="90%" height="90%"></iframe>
                 </section>
             </section>
-
-
-
-
-
-
-            <!--<section>
-                <canvas data-gitflow id="first-git-show">
-                    master.commit().commit().commit()
-                    let develop = master.branch("develop")
-                    develop.commit().commit()
-                    master.commit().commit()
-                </canvas>
-            </section>
-            <section>
-                <div class="malafat-aa" data-malafat data-dir="/home/shak/qq" data-watch dir-create></div>
-            </section>
-            <section>Slide 1</section>
-            <section>
-                <section>
-                    <div class="terminal-aa" data-terminal data-id="asdfj3slkdfjei8" data-cwd="/home/shak/qq"></div>
-                </section>
-                <section>
-                    <pre><code class="javascript" data-trim data-noescape>
-$(document).ready(function() {
-  $('pre code').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
-});
-
-                    </code></pre>
-                </section>
-                <section>Vertical Slide 2 \[\begin{aligned} \dot{x} &amp; = \sigma(y-x) \\ \dot{y} &amp; = \rho x - y - xz \\ \dot{z} &amp; = -\beta z + xy \end{aligned} \]
-                </section>
-                <section>
-                    <canvas data-gitflow>
-
-                        master.commit().commit()
-                        let dev1 = master.branch("dev1")
-                        dev1.commit({
-                            commitDotText : "asl;dfj asl;dfj asl;fjasldfj "
-                        })
-                        dev1.merge(master)
-                    </canvas>
-
-                </section>
-            </section>-->
-
-
-
-
-
-
-
 
         </div>
     </div>
@@ -567,8 +633,8 @@ $(document).ready(function() {
     <script>
         Reveal.addEventListener('ready', function(event) {
             document.querySelectorAll('iframe.iframe-element').forEach((el) => {
-                el.width = window.innerWidth * 0.9
-                el.height = window.innerHeight * 0.9
+                el.width = window.innerWidth * 0.8
+                el.height = window.innerHeight * 0.8
             })
         })
     </script>

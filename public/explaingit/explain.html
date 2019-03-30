@@ -440,7 +440,10 @@
 
         function reset() {
             explainGit.reset();
-            explainGit.open(ac)
+
+            a = ac
+            ac = JSON.parse(JSON.stringify(a));
+            explainGit.open(a)
         }
     </script>
 </body>
