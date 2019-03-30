@@ -29,7 +29,6 @@
             box-shadow: none;
         }
 
-
         i.demo-icon {
             display: inline-block !important;
         }
@@ -88,12 +87,180 @@
                     <h3>Example : Git Extensions</h3>
                     <img style="height:80vh" src="assets/git-extensions.png"></img>
                 </section>
+                <section data-menu-title="Get it">
+                    <h3>Use App Center to download</h3>
+                    <!-- TODO -->
+                </section>
+            </section>
+
+            <section data-menu-title="First Contact!">
+                <h2>Let's get into it</h2>
+            </section>
+
+            <section>
+                <section data-menu-title="History (1) Chapter">
+                    <h1><i class="fas fa-book green"></i> History (1)</h1>
+                    <div><canvas data-gitflow>
+                    master.commit().commit().commit().commit()
+                </section>
+                <section data-menu-title="Repository">
+                    <h2><i class="fas fa-project-diagram red"></i> Repository</h2>
+                    <ul>
+                        <li class="fragment">Self contained</li>
+                        <li class="fragment">Contents are related </li>
+                        <li class="fragment">Shared History </li>
+                    </ul>
+                    <pre class="fragment"><code class="shell" data-trim data-noescape>
+                        $ git init
+                    </code></pre>
+                </section>
+                <section data-menu-title="Staging Area">
+                    <img id="stagingarea" style="height:80vh" src="assets/staging-area.png">
+                </section>
+                <section data-menu-title="Commits (1)">
+                    <h2><i class="fas fa-stamp purple"></i> Commits <small><small>1st view</small></small>
+                    </h2>
+                    <ul>
+                        <li class="fragment">Locked State of the Repository</li>
+                        <li class="fragment">Referenced by Unique SHA1 Hash</li>
+                        <li class="fragment">Parent Commit Reference (hashes)</li>
+                    </ul>
+                    <pre class="fragment"><code class="shell" data-trim data-noescape>
+                        $ git add &lt;files/directories&gt;
+                        $ git commit
+                    </code></pre>
+                </section>
+                <section data-menu-title="Tags">
+                    <h2><i class="fas fa-tags pink"></i> Tags</h2>
+                    <ul>
+                        <li class="fragment">Named refence to a specific commit</li>
+                        <li class="fragment">Can be used instead of commit hash as a reference</li>
+                        <li class="fragment">Usually used to indicate a release version</li>
+                    </ul>
+                    <pre class="fragment"><code class="shell" data-trim data-noescape>
+                        $ git tag &lt;Tag name&gt;
+                    </code></pre>
+                </section>
+                <section data-menu-title="Revert">
+                    <h2><i class="fas fa-history darkgreen"></i> Revert</h2>
+                    <ul>
+                        <li class="fragment">Reverse a certain commit</li>
+                        <li class="fragment">Without deleting the old commit</li>
+                        <li class="fragment">History Does NOT change!</li>
+                        <li class="fragment">New commit</li>
+                    </ul>
+                    <pre class="fragment"><code class="shell" data-trim data-noescape>
+                        $ git revert
+                    </code></pre>
+                </section>
+                <section data-menu-title="Log">
+                    <h2><i class="fas fa-pencil-alt orange"></i> Log</h2>
+                        <p class="fragment">View Commit History</p>
+                    <pre class="fragment"><code class="shell" data-trim data-noescape>
+                        $ git log
+                        $ git log --patch
+                        $ git log --stat
+                        $ git log --pretty=oneline
+                        $ git log --graph
+                    </code></pre>
+                </section>
+                <section data-menu-title="Checkout (1)">
+                    <h2><i class="fas fa-random blue"></i> Checkout (1)</h2>
+                    <ul>
+                        <li class="fragment">Turn the working are to a specific commit</li>
+                    </ul>
+                    <pre class="fragment"><code class="shell" data-trim data-noescape>
+                        $ git checkout &lt;Commit Hash&gt;
+                    </code></pre>
+                </section>
+                <section data-menu-title="gitignore">
+                    <h2><i class="fas fa-minus-square green"></i> GitIgnore</h2>
+                    <ul>
+                        <li class="fragment">Ignore files from repository repository</li>
+                        <li class="fragment">Any changes to these files are not noticed</li>
+                    </ul>
+                </section>
             </section>
 
 
             <section>
-                <section data-menu-title="History Chapter">
-                    <h1><i class="fas fa-book green"></i> History</h1>
+                <section data-menu-title="Collaboration (1) Chapter">
+                    <h1><i class="fas fa-user-friends blue"></i> Collaboration (1)</h1>
+                </section>
+                <section data-menu-title="Model">
+                    <h2><i class="fas fa-expand-arrows-alt orange"></i> Collaboration Model</h2>
+                    <ul>
+                        <li class="fragment">Every contributer has teir own local repository</li>
+                        <li class="fragment">Every one Pushes & Pulls to/from a centra repository</li>
+                        <li class="fragment">Not everything is necessarly shared</li>
+                    </ul>
+                    <p class="fragment"><i class="fas fa-exclamation-triangle orange"></i> Contributer can share ONLY IF all previous history MATCH</p>
+                </section>
+
+                <section data-menu-title="Remotes">
+                    <h2><i class="fas fa-arrows-alt-v red"></i> Remotes</h2>
+
+                    <ul>
+                        <li class="fragment">Central repository to be used to share code</li>
+                    </ul>
+
+                    <pre class="fragment"><code class="shell" data-trim data-noescape>
+                    $ git remote
+                    $ git remote add origin &lt;link&gt;
+                    $ git remote add origin git@codehistory.com/alshakh/project.git
+                    $ git remote add origin https://codehistory.com/alshakh/project.git
+                    $ git remote add origin D:\Repos\Project.git
+
+                    $ git remote origin show
+                      * remote origin
+                        Fetch URL: git@github.com:alshakh/techiprez.git
+                        Push  URL: git@github.com:alshakh/techiprez.git
+                        HEAD branch: master
+                        Remote branches:
+                          gitsession tracked
+                          master     tracked
+                        Local branches configured for 'git pull':
+                          gitsession merges with remote gitsession
+                          master     merges with remote master
+                        Local refs configured for 'git push':
+                          gitsession pushes to gitsession (fast-forwardable)
+                          master     pushes to master     (up to date)
+                    </code></pre>
+                </section>
+                <section data-menu-title="Bare Repositories">
+                    <h2><i class="fas fa-box-open orange"></i> Bare Repositories</h2>
+                    <pre class="fragment"><code class="shell" data-trim data-noescape>
+                    $ git init --bare &lt;directory&gt;
+                    $ git init --bare D:\Repos\Project.git
+                    </code></pre>
+                </section>
+
+                <section data-menu-title="Push!">
+                    <h2><i class="fas fa-arrow-up purple"></i> Push!</h2>
+                    <p class="fragment">Sharing your commits to the outside</p>
+                    <p class="fragment"><i class="fas fa-exclamation-triangle orange"></i> Local previous hsitory and remote history MUST match</p>
+                    <pre class="fragment"><code class="shell" data-trim data-noescape>
+                    $ git push &lt;remote&gt; &lt;branch&gt;
+                    $ git push origin master
+
+                    $ git push --set-upstream origin master
+                    $ git push
+                    </code></pre>
+                </section>
+                <section data-menu-title="Pull!">
+                    <h2><i class="fas fa-arrow-down purple"></i> Pull!</h2>
+
+                    <p class="fragment">Getting & Applying shared commits to your local repository</p>
+                    <p class="fragment"><i class="fas fa-exclamation-triangle orange"></i> Local previous hsitory and remote history MUST match</p>
+                    <pre class="fragment"><code class="shell" data-trim data-noescape>
+                    $ git pull
+                    </code></pre>
+                </section>
+            </section>
+
+            <section>
+                <section data-menu-title="History (2)">
+                    <h1><i class="fas fa-book green"></i> History (2)</h1>
                     <div><canvas data-gitflow>
                     master.commit().commit().commit()
                     let develop = master.branch("develop")
@@ -107,55 +274,6 @@
                     bugfix.merge(master)
                     </canvas></div>
                 </section>
-                <section data-menu-title="First Contact!">
-                    <h2>Let's get into it</h2>
-                </section>
-                <section data-menu-title="Staging Area">
-                    <img id="stagingarea" style="height:80vh" src="assets/staging-area.png">
-                </section>
-                <section data-menu-title="Demo 1 : 1">
-                    <canvas data-gitflow>
-                    master.commit().commit()
-                    let dynamic = master.branch("dynamicgreeting")
-                    dynamic.commit().commit()
-                    master.commit()
-                    </canvas>
-                </section>
-                <section data-menu-title="Demo 1 : 2">
-                    <canvas data-gitflow>
-                    master.commit().commit()
-                    let dynamic = master.branch("dynamicgreeting")
-                    dynamic.commit().commit()
-                    master.commit()
-                    dynamic.merge(master)
-                    </canvas>
-                </section>
-
-                <section data-menu-title="Repository">
-                    <h2><i class="fas fa-project-diagram red"></i> Repository</h2>
-                    <ul>
-                        <li class="fragment">Self contained</li>
-                        <li class="fragment">Contents are related </li>
-                        <li class="fragment">Shared History </li>
-                    </ul>
-                </section>
-                <section data-menu-title="Commits (1)">
-                    <h2><i class="fas fa-stamp purple"></i> Commits <small><small>1st view</small></small>
-                    </h2>
-                    <ul>
-                        <li class="fragment">Locked State of the Repository</li>
-                        <li class="fragment">Referenced by Unique SHA1 Hash</li>
-                        <li class="fragment">Parent Commit Reference (hashes)</li>
-                    </ul>
-                </section>
-
-                <section data-menu-title="Tags">
-                    <h2><i class="fas fa-tags pink"></i> Tags</h2>
-                    <ul>
-                        <li class="fragment">Named refence to a specific commit</li>
-                        <li class="fragment">Can be used instead of commit hash as a reference</li>
-                    </ul>
-                </section>
 
                 <section data-menu-title="Commits (2)">
                     <h2><i class="fas fa-file-alt purple"></i> <i class="fas fa-file-alt red"></i></span> Commits <small><small>2nd view</small></small>
@@ -166,16 +284,6 @@
                         <li class="fragment">Can be applied at any order</li>
                     </ul>
                 </section>
-
-                <section data-menu-title="Revert">
-                    <h2><i class="fas fa-history yellow"></i> Merging</h2>
-                    <ul>
-                        <li class="fragment">Add commits (changes) from a branch to other branch</li>
-                    </ul>
-                </section>
-
-
-
 
                 <section data-menu-title="Branches (1)">
                     <h2><i class="fas fa-code-branch blue"></i> Branches <small><small>1st view</small></small>
@@ -194,6 +302,12 @@
                         <li class="fragment">Just a reference to a commit (like a tag)</li>
                         <li class="fragment">It advances everytime a new commit is made</li>
                     </ul>
+                </section>
+
+                <section data-menu-title="Reset">
+
+                    RESET !!
+
                 </section>
 
                 <section data-menu-title="Merge">
@@ -228,11 +342,43 @@
             </section>
 
             <section>
+                <section data-menu-title="Other Topics">
+
+                </section>
+                <section data-menu-title="Fetch">
+                    <h2><i class="fas long-arrow-alt-down purple"></i> Fetch</h2>
+                    <p class="fragment">Only downloading changes from remote without applying</p>
+                </section>
+                <section data-menu-title="Blamestorming">
+
+                </section>
+                <section data-menu-title="Rebase">
+
+                </section>
+                <section data-menu-title="Signed Tags">
+
+                </section>
+
+            </section>
+            <section>
                 <section data-menu-title="Generatl Advice">
                     <ul>
                         <li>Create a git repo for every project</li>
                         <li>Always create a branch for new features</li>
                     </ul>
+                </section>
+                <section data-menu-title="Getting Help">
+                    <pre class="fragment"><code class="shell" data-trim data-noescape>
+                        $ git &lt;command&gt; --help
+                        $ git remote --hlep
+                        $ git remote add --hlep
+                    </code></pre>
+
+                </section>
+                <section>
+                    <a href="https://git-scm.com/book/en/v2">GIT Official Website's book</a>
+                    <a href="https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud">Atlassian Git Tutorials</a>
+                    
                 </section>
             </section>
 
@@ -248,7 +394,7 @@
                     <div class="terminal-aa" data-unrestricted-shell data-terminal data-name="demo1" data-id="demo1" data-cwd="demos/demo1"></div>
                 </section>
                 <section>
-                        <iframe class="iframe-element" src="explaingit/explain.html?case=commit" width="90%" height="90%"></iframe>
+                    <iframe class="iframe-element" src="explaingit/explain.html?case=commit" width="90%" height="90%"></iframe>
                 </section>
             </section>
 
