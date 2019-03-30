@@ -1,219 +1,219 @@
 /* styles */
 
 /*body, html {
-    height: 100% !important;
+    height: 100%;
 }*/
 
     
 .svg-container {
-    margin-left:250px !important;
-    display: block !important;
-    overflow: auto !important;
-    border: 1px dotted #AAA !important;
+    margin-left:250px;
+    display: block;
+    overflow: auto;
+    border: 1px dotted #AAA;
 }
 
 .svg-container.remote-container {
-    position: absolute !important;
-    top: 0px !important; right: 0px;
-    background-color: #EFF1FF !important;
-    border-left: 1px dotted #AAA !important;
-    border-bottom: 1px dotted #AAA !important;
+    position: absolute;
+    top: 0px; right: 0px;
+    background-color: #EFF1FF;
+    border-left: 1px dotted #AAA;
+    border-bottom: 1px dotted #AAA;
 }
 
 #ExplainGitZen-Container {
-    position: absolute !important;
-    top: 0 !important; bottom: 0; right: 0; left: 0;
+    position: absolute;
+    top: 0; bottom: 0; right: 0; left: 0;
 }
 
 #ExplainGitZen-Container .svg-container {
-    display: inline-block !important;
-    border: 1px dotted #AAA !important;
-    position: absolute !important;
-    top: 0 !important; bottom: 0; right: 0; left: 250px;
-    margin-left: 0 !important;
+    display: inline-block;
+    border: 1px dotted #AAA;
+    position: absolute;
+    top: 0; bottom: 0; right: 0; left: 300px;
+    margin-left: 0;
 }
 
 #ExplainGitZen-Container .svg-container.remote-container {
-    position: absolute !important;
-    top: 0px !important; right: 0px; left: auto; bottom: auto;
-    background-color: #EFF1FF !important;
-    border-left: 1px dotted #AAA !important;
-    border-bottom: 1px dotted #AAA !important;
+    position: absolute;
+    top: 0px; right: 0px; left: auto; bottom: auto;
+    background-color: #EFF1FF;
+    border-left: 1px dotted #AAA;
+    border-bottom: 1px dotted #AAA;
 }
 
 #ExplainGitZen-Container .playground-container {
-    position: absolute !important;
-    top: 0 !important; bottom: 20px; right: 20px; left: 20px;
+    position: absolute;
+    top: 0; bottom:0; right: 0; left: 0;
 }
 
 .remote-name-display {
-    font-weight: bold !important;
-    text-align: right !important;
+    font-weight: bold;
+    text-align: right;
 }
 
 .control-box {
-    display: inline-block !important;
-    position: absolute !important;
-    top: 0px !important; bottom: 0;
-    width: 250px !important;
-    vertical-align: bottom !important;
-    background-color: #000 !important;
-    border: 1px dotted #AAA !important;
+    display: inline-block;
+    position: absolute;
+    top: 0px; bottom: 0;
+    width: 300px;
+    vertical-align: bottom;
+    background-color: #000;
+    border: 1px dotted #AAA;
 }
 
 .control-box button {
-    font-family: Courier New !important;
-    font-size: 12px !important;
-    margin-right: 5px !important;
-    margin-bottom: 5px !important;
+    font-family: Courier New;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 
 .control-box .log {
-    overflow-y: auto !important;
-    position: absolute !important;
-    top: 0px !important; bottom: 20px; left: 0; right: 0;
-    border-bottom: 1px solid #AAA !important;
+    overflow-y: auto;
+    position: absolute;
+    top: 0px; bottom: 30px; left: 0; right: 0;
+    border-bottom: 1px solid #AAA;
 }
 
 
 .control-box .log,
 .control-box input[type="text"] {
-    font-family: Courier New !important;
-    font-size: 14px !important;
+    font-family: Courier New;
+    font-size: 24px;
 }
 
 .control-box .log .command-entry {
-    padding-left: 15px !important;
-    color: #FFF !important;
-    line-height: 14px !important;
-    background: url(../images/prompt.gif) no-repeat left center transparent !important;
+    padding-left: 15px;
+    color: #FFF;
+    line-height: 22px;
+    background: url(../images/prompt.gif) no-repeat left center transparent;
 }
 
 .control-box input[type="text"] {
-    position: absolute !important;
-    bottom: 0 !important; 
-    padding-left: 15px !important;
-    color: #FFF !important;
-    line-height: 14px !important;
-    background: url(../images/prompt.gif) no-repeat left center transparent !important;
+    position: absolute;
+    bottom: 0; 
+    padding-left: 15px;
+    color: #FFF;
+    line-height: 14px;
+    background: url(../images/prompt.gif) no-repeat left center transparent;
 }
 
 .control-box .log .info,
 .control-box .log .error {
-    font-size: 12px !important;
-    padding: 5px !important;
+    font-size: 12px;
+    padding: 5px;
 }
 
 .control-box .log .info {
-    color: #FFC !important;
+    color: #FFC;
 }
 
 .control-box .log .error {
-    color: #FCC !important;
+    color: #FCC;
 }
 
 .control-box input[type="text"] {
-    width: 235px !important;
-    border: none !important;
+    width: 235px;
+    border: none;
 }
 
 circle.commit {
-    fill: #EEEEEE !important;
-    stroke: #888888 !important;
-    stroke-width: 3 !important;
+    fill: #EEEEEE;
+    stroke: #888888;
+    stroke-width: 3;
 }
 
 circle.commit.checked-out {
-    fill: #CCFFCC !important !important;
-    stroke: #339900 !important;
+    fill: #CCFFCC !important;
+    stroke: #339900;
 }
 
 circle.commit.merge-commit {
-    stroke: #663300 !important;
-    fill: #FFFFCC !important;
+    stroke: #663300;
+    fill: #FFFFCC;
 }
 
 circle.commit.reverted {
-    fill: #FFC !important;
-    stroke: #933 !important;
+    fill: #FFC;
+    stroke: #933;
 }
 
 circle.commit.rebased {
-    stroke: #3300CC !important;
-    fill: #CCCCFF !important;
+    stroke: #3300CC;
+    fill: #CCCCFF;
 }
 
 circle.commit.branchless {
-    fill: #FEFEFE !important;
-    stroke: #DDD !important;
+    fill: #FEFEFE;
+    stroke: #DDD;
 }
 
 .commit-pointer {
-    stroke: #666 !important;
-    stroke-width: 4 !important;
+    stroke: #666;
+    stroke-width: 4;
 }
 
 .merge-pointer {
-    stroke: #663300 !important;
-    stroke-width: 4 !important;
+    stroke: #663300;
+    stroke-width: 4;
 }
 
 .commit-pointer.branchless,
 .merge-pointer.branchless {
-    stroke: #DDD !important;
-    stroke-width: 2 !important;
+    stroke: #DDD;
+    stroke-width: 2;
 }
 
 text.id-label {
-	text-anchor: middle !important;
-	font-family: Courier New !important;
-	font-weight: bolder !important;
-	fill: #666 !important;
-	font-size: 10px !important;
+	text-anchor: middle;
+	font-family: Courier New;
+	font-weight: bolder;
+	fill: #666;
+	font-size: 10px;
 }
 
 text.message-label {
-    text-anchor: middle !important;
-    font-family: Courier New !important;
-    fill: #666 !important;
-    font-size: 10px !important;
+    text-anchor: middle;
+    font-family: Courier New;
+    fill: #666;
+    font-size: 10px;
 }
 
 g.branch-tag > rect {
-	fill: #FFCC66 !important;
-	stroke: #CC9900 !important;
-	stroke-width: 2 !important;
+	fill: #FFCC66;
+	stroke: #CC9900;
+	stroke-width: 2;
 }
 
 g.branch-tag.git-tag > rect {
-	fill: #7FC9FF !important;
-	stroke: #0026FF !important;
+	fill: #7FC9FF;
+	stroke: #0026FF;
 }
 
 g.branch-tag.remote-branch > rect {
-	fill: #CCC !important;
-	stroke: #888 !important;
+	fill: #CCC;
+	stroke: #888;
 }
 
 g.branch-tag > text {
-	text-anchor: middle !important;
-	fill: #000 !important;
-	font-size: 11px !important;
-	font-family: Arial !important;
+	text-anchor: middle;
+	fill: #000;
+	font-size: 11px;
+	font-family: Arial;
 }
 
 g.head-tag > rect {
-	fill: #CCFFCC !important;
-	stroke: #339900 !important;
-	stroke-width: 2 !important;
+	fill: #CCFFCC;
+	stroke: #339900;
+	stroke-width: 2;
 }
 
 g.head-tag > text {
-	text-anchor: middle !important;
-	fill: #000 !important;
-	font-size: 11px !important;
-	font-family: Arial !important;
-	font-weight: bold !important;
-	text-transform: uppercase !important;
+	text-anchor: middle;
+	fill: #000;
+	font-size: 11px;
+	font-family: Arial;
+	font-weight: bold;
+	text-transform: uppercase;
 }
