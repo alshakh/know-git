@@ -32,6 +32,32 @@ mkdir simple-collaboration/remote
 mkdir simple-collaboration/person-1
 mkdir simple-collaboration/person-2
 
+pushd simple-collaboration/person-1
+git init .
+echo "echo hello" >> hello.sh
+chmod +x hello.sh
+git add -A
+git commit --message "add hello file" --author "Morgan Freeman <Morgan@git.com>"
+echo "echo world" >> hello.sh
+git add -A
+git commit --message "add world" --author "Morgan Freeman <Morgan@git.com>"
+popd
+
+# history branches
+
+rm -rf hb
+mkdir hb
+
+pushd hb
+git init .
+echo "echo hello" >> hello.sh
+chmod +x hello.sh
+git add -A
+git commit --message "add hello file" --author "Morgan Freeman <Morgan@git.com>"
+echo "echo world" >> hello.sh
+git add -A
+git commit --message "add world" --author "Morgan Freeman <Morgan@git.com>"
+popd
 
 
 
