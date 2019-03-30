@@ -237,7 +237,7 @@
                 initialMessage: 'Carefully compare the commit IDs between the origin and the local repository. ' +
                     'Then type "git fetch".'
             },
-            'pull': {
+            'conflict-pull': {
                 name: "Zen",
                 height: "100%",
                 commitData: [{
@@ -270,7 +270,28 @@
                 initialMessage: 'Carefully compare the commit IDs between the origin and the local repository. ' +
                     'Then type "git pull".'
             },
-            'push': {
+            'simple-pull': {
+                name: "Zen",
+                height: "100%",
+                commitData: [{
+                        id: 'e137e9b',
+                        tags: ['master','origin/master']
+                        
+                    }
+                ],
+                originData: [{
+                        id: 'e137e9b'
+                    },
+                    {
+                        id: '7eb7654',
+                        parent: 'e137e9b',
+                        tags:['master']
+                    },
+                ],
+                initialMessage: 'Carefully compare the commit IDs between the origin and the local repository. ' +
+                    'Then type "git pull".'
+            },
+            'conflict-push': {
                 name: "Zen",
                 height: "100%",
                 commitData: [{
@@ -291,6 +312,22 @@
                         parent: 'e137e9b',
                         tags: ['master']
                     }
+                ],
+                initialMessage: 'Carefully compare the commit IDs between the origin and the local repository. ' +
+                    'Then type "git push".'
+            },
+            'simple-push': {
+                name: "Zen",
+                height: "100%",
+                commitData: [{
+                        id: 'e137e9b',
+                        tags: ['origin/master','master']
+                    },
+                ],
+                originData: [{
+                        id: 'e137e9b',
+                        tags: ['master']
+                    },
                 ],
                 initialMessage: 'Carefully compare the commit IDs between the origin and the local repository. ' +
                     'Then type "git push".'

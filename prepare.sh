@@ -13,7 +13,7 @@ cd $DEMOHOME || exit 1
 rm -rf shell-home
 mkdir shell-home
 cat > shell-home/.bashrc <<MSG
-export PS1="\e[95m$\e[0m "
+export PS1="\e[95m-----$\e[0m "
 export EDITOR=vim
 export VISUAL=vim
 MSG
@@ -24,10 +24,13 @@ rm -rf simple-history
 mkdir simple-history
 
 
-# 
+# simple-collaboration
 
-
-
+rm -rf simple-collaboration
+mkdir simple-collaboration
+mkdir simple-collaboration/remote
+mkdir simple-collaboration/person-1
+mkdir simple-collaboration/person-2
 
 
 
