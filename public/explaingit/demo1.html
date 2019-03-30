@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/explaingit.css">
+</head>
+
+<body>
+    <div id="ExplainGitZen-Container" style="display:none">
+        <div class="playground-container"></div>
+    </div>
+
+    <script src="js/d3.min.js"></script>
+    <script src="js/controlbox.js"></script>
+    <script src="js/historyview.js"></script>
+    <script src="js/explaingit.js"></script>
+    <script>
+        explainGit.reset();
+        explainGit.open({
+            name: 'Zen',
+            height: '100%',
+            commitData: [{
+                id: 'e137e9b',
+                tags: ['master'],
+                message: 'first commit'
+            }],
+            initialMessage: '--'
+        });
+    </script>
+</body>
+
+</html>

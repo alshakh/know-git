@@ -1,0 +1,219 @@
+/* styles */
+
+/*body, html {
+    height: 100% !important;
+}*/
+
+    
+.explaingit-online .svg-container {
+    margin-left:250px !important;
+    display: block !important;
+    overflow: auto !important;
+    border: 1px dotted #AAA !important;
+}
+
+.explaingit-online .svg-container.remote-container {
+    position: absolute !important;
+    top: 0px !important; right: 0px;
+    background-color: #EFF1FF !important;
+    border-left: 1px dotted #AAA !important;
+    border-bottom: 1px dotted #AAA !important;
+}
+
+.explaingit-online #ExplainGitZen-Container {
+    position: absolute !important;
+    top: 0 !important; bottom: 0; right: 0; left: 0;
+}
+
+.explaingit-online #ExplainGitZen-Container .svg-container {
+    display: inline-block !important;
+    border: 1px dotted #AAA !important;
+    position: absolute !important;
+    top: 0 !important; bottom: 0; right: 0; left: 250px;
+    margin-left: 0 !important;
+}
+
+.explaingit-online #ExplainGitZen-Container .svg-container.remote-container {
+    position: absolute !important;
+    top: 0px !important; right: 0px; left: auto; bottom: auto;
+    background-color: #EFF1FF !important;
+    border-left: 1px dotted #AAA !important;
+    border-bottom: 1px dotted #AAA !important;
+}
+
+.explaingit-online #ExplainGitZen-Container .playground-container {
+    position: absolute !important;
+    top: 0 !important; bottom: 20px; right: 20px; left: 20px;
+}
+
+.explaingit-online .remote-name-display {
+    font-weight: bold !important;
+    text-align: right !important;
+}
+
+.explaingit-online .control-box {
+    display: inline-block !important;
+    position: absolute !important;
+    top: 0px !important; bottom: 0;
+    width: 250px !important;
+    vertical-align: bottom !important;
+    background-color: #000 !important;
+    border: 1px dotted #AAA !important;
+}
+
+.explaingit-online .control-box button {
+    font-family: Courier New !important;
+    font-size: 12px !important;
+    margin-right: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+
+.explaingit-online .control-box .log {
+    overflow-y: auto !important;
+    position: absolute !important;
+    top: 0px !important; bottom: 20px; left: 0; right: 0;
+    border-bottom: 1px solid #AAA !important;
+}
+
+
+.explaingit-online .control-box .log,
+.explaingit-online .control-box input[type="text"] {
+    font-family: Courier New !important;
+    font-size: 14px !important;
+}
+
+.explaingit-online .control-box .log .command-entry {
+    padding-left: 15px !important;
+    color: #FFF !important;
+    line-height: 14px !important;
+    background: url(../images/prompt.gif) no-repeat left center transparent !important;
+}
+
+.explaingit-online .control-box input[type="text"] {
+    position: absolute !important;
+    bottom: 0 !important; 
+    padding-left: 15px !important;
+    color: #FFF !important;
+    line-height: 14px !important;
+    background: url(../images/prompt.gif) no-repeat left center transparent !important;
+}
+
+.explaingit-online .control-box .log .info,
+.explaingit-online .control-box .log .error {
+    font-size: 12px !important;
+    padding: 5px !important;
+}
+
+.explaingit-online .control-box .log .info {
+    color: #FFC !important;
+}
+
+.explaingit-online .control-box .log .error {
+    color: #FCC !important;
+}
+
+.explaingit-online .control-box input[type="text"] {
+    width: 235px !important;
+    border: none !important;
+}
+
+.explaingit-online circle.commit {
+    fill: #EEEEEE !important;
+    stroke: #888888 !important;
+    stroke-width: 3 !important;
+}
+
+.explaingit-online circle.commit.checked-out {
+    fill: #CCFFCC !important !important;
+    stroke: #339900 !important;
+}
+
+.explaingit-online circle.commit.merge-commit {
+    stroke: #663300 !important;
+    fill: #FFFFCC !important;
+}
+
+.explaingit-online circle.commit.reverted {
+    fill: #FFC !important;
+    stroke: #933 !important;
+}
+
+.explaingit-online circle.commit.rebased {
+    stroke: #3300CC !important;
+    fill: #CCCCFF !important;
+}
+
+.explaingit-online circle.commit.branchless {
+    fill: #FEFEFE !important;
+    stroke: #DDD !important;
+}
+
+.explaingit-online .commit-pointer {
+    stroke: #666 !important;
+    stroke-width: 4 !important;
+}
+
+.explaingit-online .merge-pointer {
+    stroke: #663300 !important;
+    stroke-width: 4 !important;
+}
+
+.explaingit-online .commit-pointer.branchless,
+.explaingit-online .merge-pointer.branchless {
+    stroke: #DDD !important;
+    stroke-width: 2 !important;
+}
+
+.explaingit-online text.id-label {
+	text-anchor: middle !important;
+	font-family: Courier New !important;
+	font-weight: bolder !important;
+	fill: #666 !important;
+	font-size: 10px !important;
+}
+
+.explaingit-online text.message-label {
+    text-anchor: middle !important;
+    font-family: Courier New !important;
+    fill: #666 !important;
+    font-size: 10px !important;
+}
+
+.explaingit-online g.branch-tag > rect {
+	fill: #FFCC66 !important;
+	stroke: #CC9900 !important;
+	stroke-width: 2 !important;
+}
+
+.explaingit-online g.branch-tag.git-tag > rect {
+	fill: #7FC9FF !important;
+	stroke: #0026FF !important;
+}
+
+.explaingit-online g.branch-tag.remote-branch > rect {
+	fill: #CCC !important;
+	stroke: #888 !important;
+}
+
+.explaingit-online g.branch-tag > text {
+	text-anchor: middle !important;
+	fill: #000 !important;
+	font-size: 11px !important;
+	font-family: Arial !important;
+}
+
+.explaingit-online g.head-tag > rect {
+	fill: #CCFFCC !important;
+	stroke: #339900 !important;
+	stroke-width: 2 !important;
+}
+
+.explaingit-online g.head-tag > text {
+	text-anchor: middle !important;
+	fill: #000 !important;
+	font-size: 11px !important;
+	font-family: Arial !important;
+	font-weight: bold !important;
+	text-transform: uppercase !important;
+}
