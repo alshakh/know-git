@@ -1,0 +1,244 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/explaingit.css">
+</head>
+
+<body>
+    <div id="ExplainGitZen-Container" style="display:none">
+        <div class="playground-container"></div>
+    </div>
+
+    <script src="js/d3.min.js"></script> <script src="js/controlbox.js"></script>
+    <script src="js/historyview.js"></script>
+    <script src="js/explaingit.js"></script>
+    <script>
+    var examples = {
+        'commit': {
+            name: "Zen",
+            height:"100%",
+            baseLine: 0.4,
+            commitData: [
+                {id: 'e137e9b', tags: ['master']}
+            ],
+            initialMessage: 'Type git commit a few times.'
+        },
+        'branch': {
+            name: "Zen",
+            baseLine: 0.6,
+            commitData: [
+                {id: 'e137e9b', tags: ['master']}
+            ]
+        },
+        'tag': {
+            name: "Zen",
+            baseLine: 0.6,
+            commitData: [
+                {id: 'e137e9b', tags: ['master']}
+            ]
+        },
+        'checkout': {
+            name: "Zen",
+            height:"100%",
+            commitData: [
+                {id: 'e137e9b'},
+                {id: 'bb92e0e', parent: 'e137e9b', tags: ['master']},
+                {id: 'e088135', parent: 'e137e9b', tags: ['dev']}
+            ],
+            initialMessage:
+                'Use git checkout, git branch, and git commit commands until you understand.'
+        },
+        'checkout-b': {
+            name: "Zen",
+            height:"100%",
+            commitData: [
+                {id: 'e137e9b'},
+                {id: 'f5b32c8', parent: 'e137e9b'},
+                {id: 'bb92e0e', parent: 'f5b32c8', tags: ['master']},
+                {id: 'e088135', parent: 'e137e9b', tags: ['dev']}
+            ],
+            initialMessage:
+                'Use git checkout -b and git commit commands until you understand.'
+        },
+        'reset': {
+            name: "Zen",
+            height:"100%",
+            baseLine: 0.5,
+            commitData: [
+                {id: 'e137e9b'},
+                {id: '0e70093', parent: 'e137e9b'},
+                {id: '3e33afd', parent: '0e70093', tags: ['master']}
+            ],
+            initialMessage: 'Type "git reset HEAD^".'
+        },
+        'revert': {
+            name: "Zen",
+            height:"100%",
+            baseLine: 0.5,
+            commitData: [
+                {id: 'e137e9b'},
+                {id: '0e70093', parent: 'e137e9b'},
+                {id: '3e33afd', parent: '0e70093', tags: ['master']}
+            ],
+            initialMessage: 'Type "git revert 0e70093".'
+        },
+        'merge': {
+            name: "Zen",
+            height:"100%",
+            commitData: [
+                {id: 'e137e9b'},
+                {id: 'bb92e0e', parent: 'e137e9b', tags: ['master']},
+                {id: 'f5b32c8', parent: 'e137e9b', tags: ['ff']},
+                {id: 'e088135', parent: 'f5b32c8', tags: ['dev']}
+            ],
+            initialMessage:
+                'Type "git merge dev".'
+        },
+        'rebase': {
+            name: "Zen",
+            height:"100%",
+            commitData: [
+                {id: 'e137e9b'},
+                {id: 'bb92e0e', parent: 'e137e9b', tags: ['master']},
+                {id: 'f5b32c8', parent: 'e137e9b'},
+                {id: 'e088135', parent: 'f5b32c8', tags: ['dev']}
+            ],
+            currentBranch: 'dev',
+            initialMessage:
+                'Type "git rebase master".'
+        },
+        'fetch': {
+            name: "Zen",
+            height:"100%",
+            commitData: [
+                {id: 'e137e9b', tags: ['origin/master']},
+                {id: '6ce726f', parent: 'e137e9b'},
+                {id: 'bb92e0e', parent: '6ce726f', tags: ['master']},
+                {id: '0cff760', parent: 'e137e9b', tags: ['origin/dev']},
+                {id: '4ed301d', parent: '0cff760', tags: ['dev']}
+            ],
+            originData: [
+                {id: 'e137e9b'},
+                {id: '7eb7654', parent: 'e137e9b'},
+                {id: '090e2b8', parent: '7eb7654'},
+                {id: 'ee5df4b', parent: '090e2b8', tags: ['master']},
+                {id: '0cff760', parent: 'e137e9b'},
+                {id: '2f8d946', parent: '0cff760'},
+                {id: '29235ca', parent: '2f8d946', tags: ['dev']}
+            ],
+            initialMessage:
+                'Carefully compare the commit IDs between the origin and the local repository. ' +
+                'Then type "git fetch".'
+        },
+        'pull': {
+            name: "Zen",
+            height:"100%",
+            commitData: [
+                {id: 'e137e9b', tags: ['origin/master']},
+                {id: '46d095b', parent: 'e137e9b', tags: ['master']}
+            ],
+            originData: [
+                {id: 'e137e9b'},
+                {id: '7eb7654', parent: 'e137e9b'},
+                {id: '090e2b8', parent: '7eb7654'},
+                {id: 'ee5df4b', parent: '090e2b8', tags: ['master']}
+            ],
+            initialMessage:
+                'Carefully compare the commit IDs between the origin and the local repository. ' +
+                'Then type "git pull".'
+        },
+        'push': {
+            name: "Zen",
+            height:"100%",
+            commitData: [
+                {id: 'e137e9b', tags: ['origin/master']},
+                {id: '46d095b', parent: 'e137e9b', tags: ['master']}
+            ],
+            originData: [
+                {id: 'e137e9b'},
+                {id: '7eb7654', parent: 'e137e9b', tags: ['master']}
+            ],
+            initialMessage:
+                'Carefully compare the commit IDs between the origin and the local repository. ' +
+                'Then type "git push".'
+        },
+        'clean': {
+            name: "Zen",
+            height:"100%",
+            baseLine: 0.4,
+            commitData: [
+                {id: 'e137e9b', tags: ['origin/master']},
+                {id: '0e70093', parent: 'e137e9b'},
+                {id: '3e33afd', parent: '0e70093', tags: ['master']}
+            ],
+            initialMessage: 'Type "git reset origin/master".'
+        },
+        'fetchrebase': {
+            name: "Zen",
+            height:"100%",
+            commitData: [
+                {id: 'e137e9b', tags: ['origin/master', 'master']},
+                {id: '46d095b', parent: 'e137e9b'},
+                {id: 'dccdc4d', parent: '46d095b', tags: ['my-branch']}
+            ],
+            currentBranch: 'my-branch',
+            originData: [
+                {id: 'e137e9b'},
+                {id: '7eb7654', parent: 'e137e9b'},
+                {id: '090e2b8', parent: '7eb7654'},
+                {id: 'ee5df4b', parent: '090e2b8', tags: ['master']}
+            ],
+            initialMessage:
+                'First type "git fetch". Then type "git rebase origin/master".'
+        },
+        'deletebranches': {
+            name: "Zen",
+            height:"100%",
+            baseLine: 0.6,
+            commitData: [
+                {id: 'e137e9b'},
+                {id: 'bb92e0e', parent: 'e137e9b'},
+                {id: 'd25ee9b', parent: 'bb92e0e', tags: ['master']},
+                {id: '071ff28', parent: 'e137e9b', tags: ['protoss']},
+                {id: 'f5b32c8', parent: 'bb92e0e'},
+                {id: 'e088135', parent: 'f5b32c8', tags: ['zerg']},
+                {id: '9e6c322', parent: 'bb92e0e'},
+                {id: '593ae02', parent: '9e6c322', tags: ['terran']}
+            ],
+            currentBranch: 'terran',
+            initialMessage:
+                'Delete some branches.'
+        },
+        'freeplay': {
+            name: "Zen",
+            height:"100%",
+            commitData: [
+                {id: 'e137e9b', tags: ['origin/master', 'master']}
+            ],
+            originData: [
+                {id: 'e137e9b'},
+                {id: '7eb7654', parent: 'e137e9b'},
+                {id: '090e2b8', parent: '7eb7654'},
+                {id: 'ee5df4b', parent: '090e2b8', tags: ['master']}
+            ],
+            initialMessage:
+                'Have fun.'
+        }
+    };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const caseName = urlParams.get('case');
+
+
+
+
+        explainGit.reset();
+        let a = examples[caseName]
+        if ( ! a ) {
+            a = examples["commit"]
+        }
+        explainGit.open(a);
+    </script>
+</body>
+
+</html>
