@@ -18,9 +18,13 @@ export EDITOR=vim
 export VISUAL=vim
 MSG
 
-# demo1
-rm -rf demo1
-mkdir demo1
+# simple-history
+
+rm -rf simple-history
+mkdir simple-history
+
+
+# 
 
 
 
