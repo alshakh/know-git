@@ -5,8 +5,6 @@ DEMOHOME=~/presentation-demos
 rm ./demos
 ln -s $DEMOHOME ./demos
 
-echo "MAKE SURE TO CHANGE REFERENCES TO SHELL HOME IN public/index.html"
-
 cd $DEMOHOME || exit 1
 
 # shell home
