@@ -28,7 +28,7 @@ mkdir simple-history
 
 rm -rf simple-collaboration
 mkdir simple-collaboration
-mkdir simple-collaboration/remote
+mkdir simple-collaboration/remote.git
 mkdir simple-collaboration/person-1
 mkdir simple-collaboration/person-2
 
@@ -60,4 +60,44 @@ git commit --message "add world" --author "Morgan Freeman <Morgan@git.com>"
 popd
 
 
+
+# collaboration branches
+
+rm -rf cb
+mkdir cb
+mkdir cb/local
+mkdir cb/remote.git
+
+pushd cb/local
+git init .
+
+echo "echo hello" >> hello.sh
+chmod +x hello.sh
+git add -A
+git commit --message "add hello file" --author "Morgan Freeman <Morgan@git.com>"
+
+echo "echo world" >> hello.sh
+git add -A
+git commit --message "add world" --author "Morgan Freeman <Morgan@git.com>"
+
+git branch dynamic
+git checkout dynamic
+
+echo "echo hello $@" >> greet.sh
+git add -A
+git commit --message "dynamic" --author "Morgan Freeman <Morgan@git.com>"
+
+echo "echo hello $@, Nice to see you!" > greet.sh
+git add -A
+git commit --message "add 'nice to see you!'" --author "Morgan Freeman <Morgan@git.com>"
+
+git checkout master
+
+popd
+
+
+pushd cb/remote.git
+git init . --bare
+
+popd
 
