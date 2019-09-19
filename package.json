@@ -11,6 +11,7 @@
     "reveal.js": "^3.7.0",
     "reveal.js-menu": "^1.2.0",
     "typeface-inconsolata": "0.0.72",
+    "node-pty": "github:microsoft/node-pty",
     "webbyterm": "github:alshakh/webbyterm",
     "webbyterm-client": "github:alshakh/webbyterm-client",
     "xterm": "^3.12.0"

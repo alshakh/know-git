@@ -62,5 +62,5 @@ ews.app.ws('/terminal/:id', function(ws, req) {
     terminals[id].connect(ws)
 });
 
-app.listen(3000, "localhost");
+app.listen(3000, "0.0.0.0");
 console.log("listening to localhost:3000")
